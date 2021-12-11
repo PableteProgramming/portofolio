@@ -14,6 +14,7 @@ body {
 .container {
     width: 90%;
     margin: auto;
+    height: 5000px;
 }
 
 h1 {
@@ -24,6 +25,9 @@ h1 {
 /* Nav */
 
 .nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     font-size: 20px;
     display: flex;
     justify-content: space-between;
@@ -50,18 +54,26 @@ h1 {
     border-bottom: 2px solid #ffffff;
 }
 
-.display-menu-btn {
-    position: static;
+
+/* Navbar for small screens */
+
+.title-sm {
+    /* hidden */
+    position: absolute;
     transform: translateX(-400px);
-    /* hide it */
+}
+
+.display-menu-btn {
+    position: fixed;
 }
 
 @media (max-width: 400px) {
+    /* for small screens */
     .nav ul.nav-menu {
+        position: fixed;
         display: block;
         background: #0f4212;
-        position: absolute;
-        top: 0;
+        top: 0px;
         left: 0;
         height: 100%;
         opacity: 0.8;
@@ -72,14 +84,19 @@ h1 {
     .nav ul.nav-menu.visible {
         transform: translateX(0px);
     }
-    .display-menu-btn {
+    /* visible */
+    .title-sm {
+        background: blue;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
         transform: translateX(0);
-        position: absolute;
+    }
+    .display-menu-btn {
         top: 10px;
         right: 10px;
         cursor: pointer;
         z-index: 2;
         color: white;
-        /* show it */
     }
 }
