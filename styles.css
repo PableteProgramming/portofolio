@@ -32,7 +32,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: red;
 }
 
 .nav ul {
@@ -61,10 +60,19 @@ h1 {
     /* hidden */
     position: absolute;
     transform: translateX(-400px);
+    display: flex;
+    justify-content: center;
 }
 
 .display-menu-btn {
     position: fixed;
+}
+
+.title-sm .main-title {
+    color: white;
+    font-size: 23px;
+    padding: 11px;
+    position: relative;
 }
 
 @media (max-width: 400px) {
@@ -86,7 +94,6 @@ h1 {
     }
     /* visible */
     .title-sm {
-        background: blue;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
