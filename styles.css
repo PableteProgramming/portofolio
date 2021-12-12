@@ -92,6 +92,9 @@ h1 {
 }
 
 @media (max-width: 460px) {
+    .nav {
+        position: absolute;
+    }
     /* for small screens */
     .nav ul.nav-menu {
         position: fixed;
