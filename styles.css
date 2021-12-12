@@ -91,7 +91,7 @@ h1 {
         position: fixed;
         display: block;
         background: #0f4212;
-        top: 0px;
+        top: 0;
         left: 0;
         height: 100%;
         opacity: 0.8;
@@ -100,7 +100,7 @@ h1 {
         transition: transform 0.5s ease-in-out
     }
     .nav ul.nav-menu.visible {
-        transform: translateX(0px);
+        transform: translateX(-20px);
     }
     /* visible */
     .title-sm {
