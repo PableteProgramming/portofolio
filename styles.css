@@ -27,14 +27,15 @@ h1 {
 .nav {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 3;
     font-size: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center space-between;
     align-items: center;
 }
 
 .nav ul {
+    margin-left: 10px;
     display: flex;
     list-style: none;
 }
@@ -53,6 +54,15 @@ h1 {
     border-bottom: 2px solid #ffffff;
 }
 
+.main-title {
+    color: white;
+    position: relative;
+}
+
+.nav .main-title {
+    font-size: 18px;
+}
+
 
 /* Navbar for small screens */
 
@@ -69,13 +79,11 @@ h1 {
 }
 
 .title-sm .main-title {
-    color: white;
     font-size: 23px;
-    padding: 11px;
-    position: relative;
+    margin-top: 11px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 515px) {
     /* for small screens */
     .nav ul.nav-menu {
         position: fixed;
@@ -96,7 +104,7 @@ h1 {
     .title-sm {
         position: -webkit-sticky;
         position: sticky;
-        top: 0;
+        top: 3;
         transform: translateX(0);
     }
     .display-menu-btn {
@@ -105,5 +113,9 @@ h1 {
         cursor: pointer;
         z-index: 2;
         color: white;
+    }
+    .nav .main-title {
+        position: absolute;
+        transform: translateX(-400px);
     }
 }
