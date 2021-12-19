@@ -99,11 +99,14 @@ h1 {
 }
 
 .languages .lang-image {
+    display: flex;
     grid-area: image;
-    background: url("./images/languages.png") no-repeat;
-    background-size: cover;
-    padding: 40% 0;
     border: 2px solid red;
+    align-items: center;
+}
+
+.languages .lang-image img {
+    width: 100%;
 }
 
 .languages .lang-text {
