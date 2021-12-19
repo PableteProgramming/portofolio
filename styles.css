@@ -101,7 +101,6 @@ h1 {
 .languages .lang-image {
     display: flex;
     grid-area: image;
-    border: 2px solid red;
     align-items: center;
 }
 
@@ -111,7 +110,8 @@ h1 {
 
 .languages .lang-text {
     grid-area: text;
-    border: 2px solid red;
+    display: grid;
+    align-items: center;
 }
 
 .languages .lang-text .lang-list {
