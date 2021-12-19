@@ -12,11 +12,16 @@ body {
 .container {
     width: 90%;
     margin: auto;
-    height: 5000px;
+    height: 1000px;
 }
 
-h1 {
+.beauty-link {
+    text-decoration: none;
     color: white;
+}
+
+.beauty-link:hover {
+    border-bottom: 2px solid #ffffff;
 }
 
 
@@ -47,13 +52,7 @@ h1 {
 }
 
 .nav ul li a {
-    text-decoration: none;
-    color: white;
     padding: 2px;
-}
-
-.nav ul li a:hover {
-    border-bottom: 2px solid #ffffff;
 }
 
 .main-title {
@@ -110,8 +109,6 @@ h1 {
 
 .languages .lang-text {
     grid-area: text;
-    display: grid;
-    align-items: center;
 }
 
 .languages .lang-text .lang-list {
@@ -142,6 +139,56 @@ h1 {
 
 .pad1 {
     padding-bottom: 10px;
+}
+
+.pad2 {
+    padding-bottom: 20px;
+}
+
+
+/* Footer */
+
+.footer {
+    background: black;
+    text-align: center;
+    padding: 30px;
+}
+
+.footer .links {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.footer .links ul {
+    list-style: none;
+}
+
+.footer .links ul li.title {
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer .links ul li {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.footer .icons {
+    color: white;
+    font-size: 40;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.footer .icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .icons a:hover {
+    color: red;
 }
 
 
@@ -195,5 +242,18 @@ h1 {
         grid-template-areas: "text" "image";
         grid-template-columns: 100%;
         gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer .links {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+    }
+    .footer .links ul {
+        margin-bottom: 15px;
+    }
+    .footer {
+        padding-bottom: 15px;
     }
 }
