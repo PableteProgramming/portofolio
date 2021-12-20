@@ -2,6 +2,7 @@ let dropdowns = [".dropdown-1", ".dropdown-2"];
 
 document.querySelector('.display-menu-btn').addEventListener('click', () => {
     document.querySelector('.nav-menu').classList.toggle('visible');
+    HideAllDropdowns();
 });
 
 document.querySelector('.dropdown-button1').addEventListener('click', () => {

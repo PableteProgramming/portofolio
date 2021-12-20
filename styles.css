@@ -262,7 +262,7 @@ body {
 }
 
 
-/* For smaller screens */
+/* For smaller screens: Navigation */
 
 @media (max-width: 875px) {
     .nav {
@@ -304,7 +304,20 @@ body {
         position: absolute;
         transform: translateX(-400px);
     }
+    /* dropdowns */
+    .nav ul.nav-menu li .dropdown-1.show,
+    .nav ul.nav-menu li .dropdown-2.show {
+        display: block;
+        position: absolute;
+        background: black;
+        padding-top: 0;
+        margin-left: -140px;
+        margin-top: -35px;
+    }
 }
+
+
+/* for small screens: content */
 
 @media (max-width: 680px) {
     /* Content */
@@ -314,6 +327,9 @@ body {
         gap: 10px;
     }
 }
+
+
+/* for small screens: footer */
 
 @media (max-width: 640px) {
     .footer .links {
@@ -327,6 +343,9 @@ body {
         padding-bottom: 30px;
     }
 }
+
+
+/* for small screens: footer */
 
 @media (max-width: 315px) {
     .footer .links {
