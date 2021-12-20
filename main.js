@@ -27,3 +27,13 @@ function ChangeDropdownState(d) {
         }
     }
 }
+
+function HideAllDropdowns() {
+    for (let i = 0; i < dropdowns.length; i++) {
+        document.querySelector(dropdowns[i]).classList.remove('show');
+    }
+}
+
+function HideMenuBtn() {
+    document.querySelector('.nav-menu').classList.remove('visible');
+}
