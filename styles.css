@@ -33,6 +33,27 @@ body {
     color: gray;
 }
 
+.beauty-text {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* dropdowns decoration */
+
+.dropdown-button1,
+.dropdown-button2 {
+    color: white;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.dropdown-parent {
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
 
 /* Nav */
 
@@ -50,17 +71,17 @@ body {
     background: black;
 }
 
-.nav ul {
+.nav ul.nav-menu {
     margin-left: 10px;
     display: flex;
     list-style: none;
 }
 
-.nav ul li {
+.nav ul.nav-menu li {
     padding: 10px;
 }
 
-.nav ul li a {
+.nav ul.nav-menu li a {
     padding: 2px;
 }
 
@@ -73,6 +94,42 @@ body {
 .nav .main-title {
     margin-top: -3px;
     font-size: 17px;
+}
+
+
+/* Dropdowns actions */
+
+.nav ul.nav-menu .dropdown-1,
+.nav ul.nav-menu .dropdown-2 {
+    display: none;
+}
+
+.nav ul.nav-menu .dropdown-1 ul,
+.nav ul.nav-menu .dropdown-2 ul {
+    list-style: none;
+}
+
+.nav ul.nav-menu .dropdown-1 ul li a,
+.nav ul.nav-menu .dropdown-2 ul li a {
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.nav ul.nav-menu .dropdown-1 ul li a:hover,
+.nav ul.nav-menu .dropdown-2 ul li a:hover {
+    color: gray;
+    border-bottom: 2px solid gray;
+}
+
+.nav ul.nav-menu li .dropdown-1.show,
+.nav ul.nav-menu li .dropdown-2.show {
+    display: block;
+    position: absolute;
+    background: black;
+    padding-top: 8px;
+    margin-left: -12px;
 }
 
 
