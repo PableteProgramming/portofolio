@@ -318,9 +318,7 @@ body {
         margin-top: 5px;
         padding-top: 0;
         background: gray;
-        /* width not fitting text when too small*/
-        width: auto;
-        /* width has to fit the text inside */
+        width: fit-content;
         border-radius: 4px;
         margin-left: 10px;
     }
