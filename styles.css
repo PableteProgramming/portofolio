@@ -313,11 +313,31 @@ body {
     .nav ul.nav-menu li .dropdown-1.show,
     .nav ul.nav-menu li .dropdown-2.show {
         display: block;
-        position: absolute;
+        position: relative;
         background: black;
+        margin-top: 5px;
         padding-top: 0;
-        margin-left: -12px;
-        margin-top: 0;
+        background: gray;
+        width: 20%;
+        border-radius: 4px;
+        margin-left: 10px;
+    }
+    .nav ul.nav-menu li .dropdown-1 ul li a,
+    .nav ul.nav-menu li .dropdown-2 ul li a {
+        font-size: 20px;
+    }
+    .nav ul.nav-menu li .dropdown-1 ul li a:hover,
+    .nav ul.nav-menu li .dropdown-2 ul li a:hover {
+        border-bottom: 2px solid white;
+        color: white;
+    }
+    .nav ul.nav-menu li .dropdown-1 ul li,
+    .nav ul.nav-menu li .dropdown-2 ul li {
+        padding-bottom: 2px;
+    }
+    .nav ul.nav-menu li .dropdown-1 ul li:last-child,
+    .nav ul.nav-menu li .dropdown-2 ul li:last-child {
+        padding-bottom: 10px;
     }
 }
 

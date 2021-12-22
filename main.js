@@ -1,17 +1,24 @@
 let dropdowns = [".dropdown-1", ".dropdown-2"];
+let dropdownbuttons = [".dropdown-button1", ".dropdown-button2"];
 
 document.querySelector('.display-menu-btn').addEventListener('click', () => {
     document.querySelector('.nav-menu').classList.toggle('visible');
     HideAllDropdowns();
 });
 
-document.querySelector('.dropdown-button1').addEventListener('click', () => {
+for (let i = 0; i < dropdownbuttons.length; i++) {
+    document.querySelector(dropdownbuttons[i]).addEventListener('click', () => {
+        ChangeDropdownState(dropdowns[i]);
+    });
+}
+
+/*document.querySelector('.dropdown-button1').addEventListener('click', () => {
     ChangeDropdownState(".dropdown-1");
 });
 
 document.querySelector('.dropdown-button2').addEventListener('click', () => {
     ChangeDropdownState(".dropdown-2");
-});
+});*/
 
 function ChangeDropdownState(d) {
     let dropdown = d;
@@ -33,8 +40,4 @@ function HideAllDropdowns() {
     for (let i = 0; i < dropdowns.length; i++) {
         document.querySelector(dropdowns[i]).classList.remove('show');
     }
-}
-
-function HideMenuBtn() {
-    document.querySelector('.nav-menu').classList.remove('visible');
 }
