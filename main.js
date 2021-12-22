@@ -1,25 +1,23 @@
+// some vars for automatization
 let dropdowns = [".dropdown-1", ".dropdown-2"];
 let dropdownbuttons = [".dropdown-button1", ".dropdown-button2"];
 
+// Adding the event listener for the small screen navbar button
 document.querySelector('.display-menu-btn').addEventListener('click', () => {
     document.querySelector('.nav-menu').classList.toggle('visible');
     HideAllDropdowns();
 });
 
+
+// Adding event listeners to all the dropdown buttons
 for (let i = 0; i < dropdownbuttons.length; i++) {
     document.querySelector(dropdownbuttons[i]).addEventListener('click', () => {
         ChangeDropdownState(dropdowns[i]);
     });
 }
 
-/*document.querySelector('.dropdown-button1').addEventListener('click', () => {
-    ChangeDropdownState(".dropdown-1");
-});
 
-document.querySelector('.dropdown-button2').addEventListener('click', () => {
-    ChangeDropdownState(".dropdown-2");
-});*/
-
+// Some useful functions
 function ChangeDropdownState(d) {
     let dropdown = d;
     if (document.querySelector(dropdown).classList.contains('show')) {
