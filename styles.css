@@ -16,6 +16,9 @@ body {
 .container {
     width: 90%;
     margin: auto;
+}
+
+.content {
     margin-bottom: 25px;
     z-index: -1;
 }

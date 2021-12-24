@@ -1,3 +1,8 @@
+//Adding necessary padding to the content
+let addedmargin = 10;
+let navbarheight = jQuery('.title-sm').height();
+jQuery('.content').css('margin-top', navbarheight + addedmargin + 'px');
+
 // some vars for automatization
 let dropdowns = [".dropdown-1", ".dropdown-2"];
 let dropdownbuttons = [".dropdown-button1", ".dropdown-button2"];
