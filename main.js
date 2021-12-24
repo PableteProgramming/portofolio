@@ -1,7 +1,10 @@
+$(window).resize(function() {
+    CheckWindowWidth();
+});
+
+
 //Adding necessary padding to the content
 let addedmargin = 10;
-let navbarheight = jQuery('.title-sm').height();
-jQuery('.content').css('margin-top', navbarheight + addedmargin + 'px');
 
 // some vars for automatization
 let dropdowns = [".dropdown-1", ".dropdown-2"];
@@ -42,5 +45,15 @@ function ChangeDropdownState(d) {
 function HideAllDropdowns() {
     for (let i = 0; i < dropdowns.length; i++) {
         document.querySelector(dropdowns[i]).classList.remove('show');
+    }
+}
+
+function CheckWindowWidth() {
+    maxwidth = $('html').css('max-width');
+    if (maxwidth == '875px') {
+        let navbarheight = jQuery('.title-sm').height();
+        jQuery('.content').css('margin-top', navbarheight + addedmargin + 'px');
+    } else {
+        jQuery('.content').css('margin-top', 0);
     }
 }
