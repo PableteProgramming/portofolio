@@ -306,7 +306,7 @@ body {
         display: block;
     }
     .nav .nav-menu.visible {
-        transform: translateX(0);
+        transform: translateY(0);
     }
     /* visible */
     .title-sm {
