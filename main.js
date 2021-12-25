@@ -2,6 +2,8 @@ $(window).resize(function() {
     CheckWindowWidth();
 });
 
+window.onload = CheckWindowWidth;
+
 
 //Adding necessary padding to the content
 let addedmargin = 10;
