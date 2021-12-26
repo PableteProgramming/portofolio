@@ -2,6 +2,8 @@ window.onresize = CheckWindowWidth;
 
 window.onload = onLoad;
 
+const interval = setInterval(CheckWindowWidth, 1);
+
 
 //Adding necessary padding to the content
 let addedmargin = 10;
@@ -62,9 +64,13 @@ function CheckWindowWidth() {
     maxwidth = $('html').css('max-width');
     if (maxwidth == '875px') {
         let navbarheight = jQuery('.title-sm').height();
+        if (navbarheight != 0) {
+            clearInterval(interval);
+        }
         jQuery('.content').css('margin-top', navbarheight + addedmargin + 'px');
     } else {
         jQuery('.content').css('margin-top', 0);
+        clearInterval(interval);
     }
 }
 
