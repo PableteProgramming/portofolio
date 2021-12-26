@@ -345,6 +345,7 @@ body {
         width: fit-content;
         border-radius: 4px;
         margin-left: 10px;
+        font-size: 20px;
     }
     .nav .nav-menu .dropdown-1 ul li a,
     .nav .nav-menu .dropdown-2 ul li a {
