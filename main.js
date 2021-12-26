@@ -1,8 +1,6 @@
-$(window).resize(function() {
-    CheckWindowWidth();
-});
+window.onresize = CheckWindowWidth;
 
-window.onload = CheckWindowWidth;
+window.onload = onLoad;
 
 
 //Adding necessary padding to the content
@@ -12,33 +10,43 @@ let addedmargin = 10;
 let dropdowns = [".dropdown-1", ".dropdown-2"];
 let dropdownbuttons = [".dropdown-button1", ".dropdown-button2"];
 
-// Adding the event listener for the small screen navbar button
-document.querySelector('.display-menu-btn').addEventListener('click', () => {
-    document.querySelector('.nav-menu').classList.toggle('visible');
-    HideAllDropdowns();
-});
-
-
-// Adding event listeners to all the dropdown buttons
-for (let i = 0; i < dropdownbuttons.length; i++) {
-    document.querySelector(dropdownbuttons[i]).addEventListener('click', () => {
-        ChangeDropdownState(dropdowns[i]);
+function IncludeTemplates() {
+    var includes = $('[data-include]');
+    $.each(includes, function() {
+        var file = 'templates/' + $(this).data('include') + '.html';
+        $(this).load(file);
     });
 }
 
+// Adding the event listener for the small screen navbar button
+function AddSmallScreensButtonListener() {
+    $("body").on('click', ".display-menu-btn", () => {
+        $('.nav-menu').toggleClass('visible');
+        HideAllDropdowns();
+    });
+}
+
+// Adding event listeners to all the dropdown buttons
+function AddDropdownsListeners() {
+    for (let i = 0; i < dropdownbuttons.length; i++) {
+        $("body").on('click', dropdownbuttons[i], () => {
+            ChangeDropdownState(dropdowns[i]);
+        });
+    }
+}
 
 // Some useful functions
 function ChangeDropdownState(d) {
     let dropdown = d;
-    if (document.querySelector(dropdown).classList.contains('show')) {
+    if ($(dropdown).hasClass('show')) {
         // hide this one
-        document.querySelector(dropdown).classList.remove('show');
+        $(dropdown).removeClass('show');
     } else {
         // show this one and hide all the others
-        document.querySelector(dropdown).classList.add('show');
+        $(dropdown).addClass('show');
         for (let i = 0; i < dropdowns.length; i++) {
             if (dropdowns[i] !== dropdown) {
-                document.querySelector(dropdowns[i]).classList.remove('show');
+                $(dropdowns[i]).removeClass('show');
             }
         }
     }
@@ -46,7 +54,7 @@ function ChangeDropdownState(d) {
 
 function HideAllDropdowns() {
     for (let i = 0; i < dropdowns.length; i++) {
-        document.querySelector(dropdowns[i]).classList.remove('show');
+        $(dropdowns[i]).removeClass('show');
     }
 }
 
@@ -58,4 +66,11 @@ function CheckWindowWidth() {
     } else {
         jQuery('.content').css('margin-top', 0);
     }
+}
+
+function onLoad() {
+    IncludeTemplates();
+    CheckWindowWidth();
+    AddSmallScreensButtonListener();
+    AddDropdownsListeners();
 }
